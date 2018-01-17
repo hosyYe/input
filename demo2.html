@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>移动端响应</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, maximum-scale=1, minimum-scale=1">
+	<link rel="stylesheet" href="aaa.css">
+	<link rel="stylesheet" href="menu.css">
+</head>
+<style>
+	body{
+		background: #ccc;
+		font-size: 14px;
+	}
+	.radio,.checkbox{
+		margin: 2rem;
+		display: flex;
+	}
+</style>
+<body>
+	<div class="radio">
+		<div class="field-legend">
+			<label>性别：</label>
+		</div>
+		<div class="field-content">
+			<label class="radio-wrap">
+				<input type="radio" name="sex" id="man" value="1" />
+				<span></span>
+			</label>
+			<label for="man">先生</label>
+			<label class="radio-wrap">				
+				<input type="radio" name="sex" id="woman" value="0" />
+				<span></span>						
+			</label>
+			<label for="woman">女士</label>
+		</div>
+	</div>
+	<div class="checkbox">
+		<div class="field-legend">
+			<label>爱好：</label>
+		</div>
+		<div class="field-content">
+			<label class="checkbox-wrap">
+				<input type="checkbox" id="agreement" checked />
+				<span></span>
+			</label>
+			<label for="agreement">同意协议</label>
+		</div>
+	</div>
+	<style>
+		.radio-wrap,.checkbox-wrap{
+			display: inline-block;
+			vertical-align: middle;
+		}
+		.radio-wrap input,.checkbox-wrap input{
+			display: none;
+		}
+		.radio-wrap span,.checkbox-wrap span{
+			cursor: pointer;
+			display: inline-block;
+			position: relative;
+			border: 1px solid blue;
+			border-radius: 3px;
+			padding: 1px;
+			margin-right: 0.5em;
+			margin-left: 0.5em;
+			overflow: hidden;
+		}
+		.radio-wrap span:before,.checkbox-wrap span:before{
+			content: '';
+			display: block;/*不能使用inline-block,否则高度会默认设置21*/
+			width: 12px;
+			height: 12px;
+		}
+		.radio span:before{
+			opacity: 0;
+			border-radius: 2px;
+			background: red;
+		}
+		.radio-wrap input:checked ~ span:before{
+			opacity: 1;
+		}
+		.radio-wrap input:checked ~ span,.checkbox-wrap input:checked ~ span{
+			border-color: red;
+		}
+		.checkbox-wrap input:checked ~ span:before{
+			content: '\2713';
+			color: red;
+			line-height: 1;
+			font-size: 14px;
+			text-align: center;
+		}
+
+	</style>
+</body>
+</html>
